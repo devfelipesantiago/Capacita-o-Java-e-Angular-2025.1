@@ -1,12 +1,13 @@
 package com.br.minsait.services;
 
-import com.br.minsait.models.entities.Person;
-import com.br.minsait.services.exceptions.PersonNotFoundException;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.br.minsait.models.entities.Person;
 import com.br.minsait.models.repositories.PersonRepository;
+import com.br.minsait.services.exceptions.PersonNotFoundException;
 
 @Service
 public class PersonService {
