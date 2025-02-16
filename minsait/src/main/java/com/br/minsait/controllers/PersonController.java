@@ -1,8 +1,7 @@
 package com.br.minsait.controllers;
 
-import com.br.minsait.controllers.dtos.PersonDto;
-import com.br.minsait.services.exceptions.PersonNotFoundException;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.br.minsait.controllers.dtos.PersonDto;
 import com.br.minsait.models.entities.Person;
 import com.br.minsait.services.PersonService;
+import com.br.minsait.services.exceptions.PersonNotFoundException;
 
 import io.swagger.v3.oas.annotations.Operation;
 
