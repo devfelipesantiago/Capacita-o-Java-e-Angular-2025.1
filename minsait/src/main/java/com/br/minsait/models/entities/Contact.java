@@ -36,8 +36,7 @@ public class Contact {
   public Contact() {
   }
 
-  public Contact(int id, ContactType contactType, String contact, Person person) {
-    this.id = id;
+  public Contact(ContactType contactType, String contact, Person person) {
     this.contactType = contactType;
     this.contact = contact;
     this.person = person;
@@ -45,10 +44,6 @@ public class Contact {
 
   public int getId() {
     return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
   }
 
   public ContactType getContactType() {
@@ -73,5 +68,15 @@ public class Contact {
 
   public void setPerson(Person person) {
     this.person = person;
+  }
+
+  @Override
+  public String toString() {
+    return "Contact{" +
+        "id=" + id +
+        ", contactType=" + contactType +
+        ", contact='" + contact + '\'' +
+        ", person=" + person +
+        '}';
   }
 }
