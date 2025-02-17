@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.br.minsait.controllers.dtos.ContactDto;
 import com.br.minsait.models.entities.Contact;
 import com.br.minsait.models.entities.Person;
 import com.br.minsait.models.repositories.ContactRepository;
@@ -24,10 +25,10 @@ public class ContactService {
     this.personService = personService;
   }
 
-  public Contact addContact(Contact contact) throws PersonNotFoundException {
-    Person person = personService.getPersonById(contact.getPerson().getId());
+  public Contact addContact(ContactDto contactDto) throws PersonNotFoundException {
+    Person person = personService.getPersonById(contactDto.personId());
 
-    contact.setPerson(person);
+    Contact contact = ContactDto.toEntity(contactDto, person);
     return contactRepository.save(contact);
   }
 
@@ -35,8 +36,8 @@ public class ContactService {
     return contactRepository.findById(id).orElseThrow(ContactNotFoundException::new);
   }
 
-  public List<Contact> findContactByPersonId(int pessoaId) {
-    return contactRepository.findContactByPersonId(pessoaId);
+  public List<Contact> findContactsByPersonId(int pessoaId) {
+    return contactRepository.findContactByPerson_Id(pessoaId);
   }
 
   public String delete(int id) {
