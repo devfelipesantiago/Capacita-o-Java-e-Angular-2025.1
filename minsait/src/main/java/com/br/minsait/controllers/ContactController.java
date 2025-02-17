@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.br.minsait.controllers.dtos.ContactDto;
 import com.br.minsait.models.entities.Contact;
 import com.br.minsait.services.ContactService;
 import com.br.minsait.services.exceptions.ContactNotFoundException;
@@ -35,9 +36,9 @@ public class ContactController {
   @PostMapping
   @Operation(summary = "Add a new Contact to a Person")
   @ResponseStatus(HttpStatus.CREATED)
-  public Contact createContact(@RequestBody Contact contact)
+  public Contact createContact(@RequestBody ContactDto contactDto)
       throws PersonNotFoundException {
-    return contactService.addContact(contact);
+    return contactService.addContact(contactDto);
   }
 
   @GetMapping("/{id}")
@@ -51,7 +52,7 @@ public class ContactController {
   @Operation(summary = "Get all Contacts of a Person")
   @ResponseStatus(HttpStatus.OK)
   public List<Contact> listByPerson(@PathVariable int pessoaId) {
-    return contactService.findContactByPersonId(pessoaId);
+    return contactService.findContactsByPersonId(pessoaId);
   }
 
   @PutMapping("/{id}")
