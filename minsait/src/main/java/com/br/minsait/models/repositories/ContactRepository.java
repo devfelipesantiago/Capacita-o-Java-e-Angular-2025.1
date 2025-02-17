@@ -10,5 +10,5 @@ import com.br.minsait.models.entities.Contact;
 @Repository
 public interface ContactRepository extends JpaRepository<Contact, Integer> {
 
-  List<Contact> findContactByPersonId(int personId);
+  List<Contact> findContactByPerson_Id(int personId);
 }
