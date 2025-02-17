@@ -38,8 +38,7 @@ public class Person {
   public Person() {
   }
 
-  public Person(int id, String name, String adress, String zipCode, String city, String state) {
-    this.id = id;
+  public Person(String name, String adress, String zipCode, String city, String state) {
     this.name = name;
     this.address = adress;
     this.zipCode = zipCode;
@@ -49,10 +48,6 @@ public class Person {
 
   public int getId() {
     return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
   }
 
   public String getName() {
@@ -103,4 +98,16 @@ public class Person {
     this.contactList.add(contact);
   }
 
+  @Override
+  public String toString() {
+    return "Person{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", address='" + address + '\'' +
+        ", zipCode='" + zipCode + '\'' +
+        ", city='" + city + '\'' +
+        ", state='" + state + '\'' +
+        ", contactList=" + contactList +
+        '}';
+  }
 }
