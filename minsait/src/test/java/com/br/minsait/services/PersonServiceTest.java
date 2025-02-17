@@ -2,9 +2,12 @@ package com.br.minsait.services;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 
 import com.br.minsait.models.entities.Person;
 import com.br.minsait.models.repositories.PersonRepository;
+import com.br.minsait.services.exceptions.PersonNotFoundException;
+import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +53,16 @@ class PersonServiceTest {
     assertEquals(person.getCity(), savedPerson.getCity());
     assertEquals(person.getState(), savedPerson.getState());
 
+  }
+
+  @Test
+  public void personNotFound() {
+    Mockito.when(personRepository.findById(any()))
+        .thenReturn(Optional.empty());
+
+    assertThrows(PersonNotFoundException.class, () -> personService.getPersonById(456));
+
+    Mockito.verify(personRepository).findById(eq(456));
   }
 
   @Test
