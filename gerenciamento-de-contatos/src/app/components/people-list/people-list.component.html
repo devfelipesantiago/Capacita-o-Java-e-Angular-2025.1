@@ -1,1 +1,7 @@
-<p>people-list works!</p>
+<h2>Lista de Pessoas</h2>
+<app-person-table
+  [people]="people"
+  (edit)="onEdit($event)"
+  (delete)="onDelete($event)"
+></app-person-table>
+<button routerLink="/create">Adicionar Pessoa</button>
