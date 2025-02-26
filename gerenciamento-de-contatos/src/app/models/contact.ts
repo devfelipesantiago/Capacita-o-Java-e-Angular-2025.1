@@ -1,8 +1,6 @@
-import { Person } from './person';
-
 export interface Contact {
-  id?: number;
-  contactType: string;
+  id: number;
+  contactType: 'PHONE' | 'SMARTPHONE';
   contact: string;
-  person: Person;
+  person: string;
 }

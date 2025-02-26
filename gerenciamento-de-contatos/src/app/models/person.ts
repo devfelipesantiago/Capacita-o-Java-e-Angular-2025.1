@@ -1,10 +1,11 @@
+import { Contact } from './contact';
+
 export interface Person {
-  id?: number;
+  id: number;
   name: string;
-  cep: string;
   address: string;
+  zipCode: string;
   city: string;
-  UF: string;
-  active: boolean;
-  smartphone: string;
+  state: string;
+  contactList: Contact[];
 }
