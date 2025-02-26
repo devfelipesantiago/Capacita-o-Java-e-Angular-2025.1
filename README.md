@@ -32,11 +32,14 @@ na estrutura de Pessoas e Contatos.
 
 - Use o comando: `git clone git@github.com:devfelipesantiago/Capacita-o-Java-e-Angular-2025.1.git`
 - Entre na pasta do repositório que você acabou de clonar:
-  - `cd mainsait`
+  - `cd mainsait` para acessar a pasta do backend
+  - `cd gerenciamento-de-contatos` para acessar a pasta do frontend
 - Instale as dependências:
-  - `mvn clean install -DskipTests`
+  - `mvn clean install -DskipTests` para o backend
+  - `npm install` para o frontend
 - Inicie o projeto com o comando:
-  - `mvn spring-boot:run`
+  - `mvn spring-boot:run` para o backend
+  - `ng serve` para o frontend
 
 </details>
 
