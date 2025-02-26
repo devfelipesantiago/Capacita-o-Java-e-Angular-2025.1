@@ -23,11 +23,11 @@ export class PersonService {
   async getPersonForDirectMail(personId: number): Promise<Person> {
     try {
       const response = await axios.get(
-        `${this.apiUrl}/pessoas/maladireta${personId}`
+        `${this.apiUrl}/pessoas/maladireta/${personId}`
       );
       return response.data;
     } catch (error) {
-      console.error('Erro ao buscar maladireta.:', error);
+      console.error('Erro ao buscar maladireta:', error);
       throw error;
     }
   }
@@ -43,10 +43,17 @@ export class PersonService {
   }
 
   async updatePerson(person: Person): Promise<Person> {
+    const personOrdered = {
+      name: person.name,
+      address: person.address,
+      zipCode: person.zipCode,
+      city: person.city,
+      state: person.state,
+    };
     try {
       const response = await axios.put(
         `${this.apiUrl}/pessoas/${person.id}`,
-        person
+        personOrdered
       );
       return response.data;
     } catch (error) {
