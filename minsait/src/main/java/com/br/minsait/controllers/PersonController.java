@@ -56,7 +56,7 @@ public class PersonController {
   @PutMapping("/{id}")
   @Operation(summary = "Update a Person")
   @ResponseStatus(HttpStatus.OK)
-  public Person updatePersonById(@PathVariable int id, Person personData)
+  public Person updatePersonById(@PathVariable int id, @RequestBody Person personData)
       throws PersonNotFoundException {
     return personService.updatePersonById(id, personData);
   }
