@@ -1,0 +1,26 @@
+<header>
+  <h1>{{ title }}</h1>
+  <nav>
+    <ul>
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Lista de Pessoas</a
+        >
+      </li>
+      <li>
+        <a routerLink="/create" routerLinkActive="active">Cadastrar Pessoa</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <p>&copy;Todos os direitos reservados.</p>
+</footer>

@@ -1,0 +1,31 @@
+<h2>{{ isEditMode ? "Editar" : "Adicionar" }} Pessoa</h2>
+
+<form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Nome:</label>
+    <input id="name" formControlName="name" required />
+  </div>
+
+  <div>
+    <label for="address">Endereço:</label>
+    <input id="address" formControlName="address" required />
+  </div>
+
+  <div>
+    <label for="zipCode">CEP:</label>
+    <input id="zipCode" formControlName="zipCode" required />
+  </div>
+
+  <div>
+    <label for="city">Cidade:</label>
+    <input id="city" formControlName="city" required />
+  </div>
+
+  <div>
+    <label for="state">Estado:</label>
+    <input id="state" formControlName="state" required />
+  </div>
+
+  <button type="submit" [disabled]="!personForm.valid">Salvar</button>
+  <button type="button" (click)="router.navigate(['/'])">Cancelar</button>
+</form>
