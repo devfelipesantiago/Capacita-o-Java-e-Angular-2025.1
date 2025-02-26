@@ -7,7 +7,7 @@
       <th>CEP</th>
       <th>UF</th>
       <th>Ativo</th>
-      <th>Celular</th>
+      <th>Contato</th>
       <th>Ações</th>
     </tr>
   </thead>
@@ -16,10 +16,9 @@
       <td>{{ person.id }}</td>
       <td>{{ person.name }}</td>
       <td>{{ person.address }}</td>
-      <td>{{ person.cep }}</td>
-      <td>{{ person.UF }}</td>
-      <td>{{ person.active ? "Sim" : "Não" }}</td>
-      <td>{{ person.smartphone }}</td>
+      <td>{{ person.zipCode }}</td>
+      <td>{{ person.state }}</td>
+      <td>{{ person.contactList }}</td>
       <td>
         <button (click)="onEdit(person.id!)">Editar</button>
         <button (click)="onDelete(person.id!)">Excluir</button>
